@@ -27,3 +27,28 @@ struct Heart : View {
         
     }
 }
+
+struct Parrot: View {
+    var body: some View {
+        HStack{
+            Image("loro")
+                .resizable()
+            //.scaledToFit()
+            //.frame(width: 200)
+            //.ignoresSafeArea()
+                .clipShape(Capsule())
+                .opacity(0.75)
+                .overlay(
+                    Text("Dimelo Manzana")
+                        .bold()
+                        .foregroundColor(.red)
+                        .font(.system(size: 35))
+                    //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .background(.black)
+                        .opacity(0.5)
+                        .cornerRadius(10.0)  //cornerRadius must be before padding
+                        .padding()
+                )
+        }
+    }
+}
